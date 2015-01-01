@@ -1,4 +1,4 @@
-/* 2014-02-27 v2.6.1 */
+/* via v2.6 */
 /* buttons */
 .btn { display: inline-block; padding: .5em 1em; border: 0 none; border: 1px solid rgba(0,0,0,.25); border-radius: 0.3em; background-image: none; box-shadow: 0 1px rgba(0,0,0,.15), inset 0 1px rgba(255,255,255,.15); color: #fff; text-align: center; text-decoration: none; text-shadow: 1px 1px rgba(0,0,0,.1); font-size: 100%; font-family: inherit; font-weight: inherit; white-space: nowrap; -webkit-user-select: none; -moz-user-select: none; user-select: none; overflow: visible; cursor: pointer; }
 .btn:hover, .btn:focus { text-decoration: none; background-image: linear-gradient(to bottom, rgba(0,0,0,.1), rgba(0,0,0,.1)); cursor: pointer;}
@@ -36,10 +36,10 @@
 .fuchsia{color:#f012be;}
 .purple{color:#b10dc9;}
 .maroon{color:#85144b;}
-.white{color:#ffffff;}
-.silver{color:#dddddd;}
-.gray{color:#aaaaaa;}
-.black{color:#111111;}
+.white{color:#fff;}
+.silver{color:#ddd;}
+.gray{color:#aaa;}
+.black{color:#111;}
 /* display */
 .dn{display:none;}
 .di{display:inline;}
@@ -57,6 +57,13 @@
 .h45{height:45px;}
 .h50{height:50px;}
 .h60{height:60px;}
+
+/* opacity */
+.op0{opacity: 0;}
+.op3{opacity: .3;}
+.op5{opacity: .5;}
+.op7{opacity: .7;}
+.op1{opacity: 1;}
 
 /* width */
 /* fixed width value */
@@ -220,19 +227,19 @@
 .btf{border-top:1px solid #f0f0f0;}
 .bbf{border-bottom:1px solid #f0f0f0;}
 /* background-color name rule:bg - (key word/Hex color) |-> All colors are safe color */
-.bgwh{background-color:#fff;}
-.bgfb{background-color:#fbfbfb;}
-.bgf5{background-color:#f5f5f5;}
-.bgf0{background-color:#f0f0f0;}
-.bgeb{background-color:#ebebeb;}
-.bge0{background-color:#e0e0e0;}
+.bg-ff{background-color:#fff;}
+.bg-fb{background-color:#fbfbfb;}
+.bg-f5{background-color:#f5f5f5;}
+.bg-f0{background-color:#f0f0f0;}
+.bg-eb{background-color:#ebebeb;}
+.bg-e0{background-color:#e0e0e0;}
 /* safe color */
-.g0{color:#000;}
-.g3{color:#333;}
-.g6{color:#666;}
-.g9{color:#999;}
-.gc{color:#ccc;}
-.wh{color:white;}
+.c0{color:#000;}
+.c3{color:#333;}
+.c6{color:#666;}
+.c9{color:#999;}
+.cc{color:#ccc;}
+.cf{color:#fff;}
 /* font-size */
 .f0{font-size:0;}
 .f10{font-size:10px;}
@@ -256,12 +263,13 @@
 .b{font-weight:bold;}
 .i{font-style:italic;}
 /* text-align */
-.tc{text-align:center;}
-.tr{text-align:right;}
-.tl{text-align:left;}
-.tj{text-align:justify;}
+.tac{text-align:center;}
+.tar{text-align:right;}
+.tal{text-align:left;}
+.taj{text-align:justify;}
 /* text-decoration */
-.tdl{text-decoration:underline;}
+.tdu{text-decoration:underline;}
+.tdl{text-decoration:line-through;}
 .tdn,.tdn:hover,.tdn a:hover,a.tdl:hover{text-decoration:none;}
 /* letter-spacing */
 .lt-1{letter-spacing:-1px;}
@@ -270,7 +278,7 @@
 /* white-space */
 .nowrap{white-space:nowrap;}
 /* word-wrap */
-.bk{word-wrap:break-word;}
+.break{word-wrap:break-word;}
 /* vertical-align */
 .vm{vertical-align:middle;}
 .vtb{vertical-align:text-bottom;}
@@ -278,21 +286,23 @@
 .vt{vertical-align:top;}
 .vn{vertical-align:-2px;}
 /* float */
-.l{float:left;}
-.r{float:right;}
+.fl{float:left;}
+.fr{float:right;}
 /* clear */
 .cl{clear:both;}
 /* position */
-.rel{position:relative;}
-.abs{position:absolute;}
+.por{position:relative;}
+.poa{position:absolute;}
+.pof{position: fixed}
 /*z-index*/
-.zx1{z-index:1;}
-.zx2{z-index:2;}
-.zx99{z-index:99;}
+.z1{z-index:1;}
+.z2{z-index:2;}
+.z99{z-index:99;}
 /* cursor */
-.poi{cursor:pointer;}
-.def{cursor:default;}
-.nota{cursor:not-allowed;}
+.curp{cursor:pointer;}
+.curd{cursor:default;}
+.curh{cursor:help;}
+.cura{cursor:not-allowed;}
 /* overflow */
 .ovh{overflow:hidden;}
 .ova{overflow:auto;}
@@ -300,7 +310,7 @@
 .vh{visibility:hidden;}
 .vv{visibility:visible;}
 /* zoom */
-.z{*zoom:1;}
+.zo{*zoom:1;}
 
 
 /* ------------------- multiply CSS ------------------ */
@@ -314,11 +324,11 @@
 /* 双栏自适应cell部分连续英文字符换行 */
 .cell-bk{display:table; width:100%; table-layout:fixed; word-wrap:break-word;}
 /* 单行文字溢出虚点显示*/
-.ell{text-overflow:ellipsis; white-space:nowrap; overflow:hidden;}
+.toe{text-overflow:ellipsis; white-space:nowrap; overflow:hidden;}
 /* css3过渡动画效果 */
 .trans{
-	-webkit-transition:all 0.3s;
-	        transition:all 0.3s;
+    -webkit-transition:all 0.3s;
+            transition:all 0.3s;
 }
 /* 大小不定元素垂直居中 */
 .dib-vm{display:inline-block; width:0; height:100%; vertical-align:middle;}
@@ -327,18 +337,21 @@
 /* 无框文本框文本域 */
 .bd-none{border:0; outline:none;}
 /* 绝对定位隐藏 */
-.abs-out{position:absolute; left:-999em; top:-999em;}
-.abs-clip{position:absolute; clip:rect(0 0 0 0);}
+.poa-out{position:absolute; left:-999em; top:-999em;}
+.poa-clip{position:absolute; clip:rect(0 0 0 0);}
 /* 按钮禁用 */
 .disabled{color:#acacac!important; border-color:#acacac!important; text-shadow:1px 1px #fff!important; outline:0!important; cursor:default!important; pointer-events:none;}
 .disabled:hover{text-decoration:none!important;cursor:not-allowed;}
 /*inline-block与float等宽列表*/
-.inline-box{font-size:1em; letter-spacing:-.25em; font-family:Arial;}
-.inline-two, .inline-three, .inline-four, .inline-five, .inline-six, .inline-any{display:inline-block; *display:inline; letter-spacing:0; vertical-align:top; *zoom:1;}
-.float-two, .float-three, .float-four, .float-five, .float-six{float:left;}
-.inline-two, .float-two{width:49.9%;}
-.inline-three, .float-three{width:33.3%;}
-.inline-four, .float-four{width:24.9%;}
-.inline-five, .float-five{width:19.9%;}
-.inline-six, .float-six{width:16.6%;}
-.inline-fix{display:inline-block; width:100%; height:0; overflow:hidden;}
+.in-box{font-size:1em; letter-spacing:-.25em; font-family:Arial;}
+.in-2, .in-3, .in-4, .in-5, .in-6, .in-8, .in-9, .in-10, .in-any{display:inline-block; *display:inline; letter-spacing:0; vertical-align:top; *zoom:1;}
+.fl-2, .fl-3, .fl-4, .fl-5, .fl-6, .fl-8, .fl-9, .fl-10{float:left;}
+.in-2, .fl-2{width:49.9%;}
+.in-3, .fl-3{width:33.3%;}
+.in-4, .fl-4{width:24.9%;}
+.in-5, .fl-5{width:19.9%;}
+.in-6, .fl-6{width:16.6%;}
+.in-8, .fl-8{width:12.4%;}
+.in-9, .fl-9{width:11.1%;}
+.in-10, .fl-10{width:9.9%;}
+.in-fix{display:inline-block; width:100%; height:0; overflow:hidden;}
